@@ -37,7 +37,26 @@ $ python
 import secrets
 secrets.token_hex(16)
 ```
-
+***
+###### bcrypt
+```
+>>> from flask_bcrypt import Bcrypt
+>>> bcrypt = Bcrypt()
+>>> bcrypt.generate_password_hash('testing')
+b'$2b$12$t8ocJPJ7YbHdWUoxMKNoxetn50kPthF96te/yagKZA5JStoYtEa86'
+>>> bcrypt.generate_password_hash('testing').decode('utf-8')
+'$2b$12$3h2C3XacveITxvg6WvL4ee/QHp9ejTn/gOUWEZ7.MBsRVawLx4D2K'
+>>> bcrypt.generate_password_hash('testing').decode('utf-8')
+'$2b$12$qzsMp21u.FsUUoO8/beuMOUgzTBpT5ItUXTUzBEtPIQNvbI2DRR7K'
+>>> bcrypt.generate_password_hash('testing').decode('utf-8')
+'$2b$12$GtUotcjBEbdGYpN0BqFSzeExRngy34LAZgCwEH287wa0pXd4.Pn/C'
+>>> hashed_pw = bcrypt.generate_password_hash('testing').decode('utf-8')
+>>> bcrypt.check_password_hash(hashed_pw, 'password')
+False
+>>> bcrypt.check_password_hash(hashed_pw, 'testing')
+True
+>>> exit()
+```
 ***
 ###### Reference
 https://youtu.be/QnDWIZuWYW0
