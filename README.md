@@ -1,4 +1,4 @@
-# flaskblog
+# flaskblog (Python 3.7.3)
 
 ###### project 생성
 ```
@@ -6,11 +6,7 @@ $ python3 -m venv venv
 
 $ source venv/bin/activate
 
-$ pip install flask
-
-$ pip install flask-wtf
-
-$ pip install flask-sqlalchemy
+$ pip install -r requirements.txt
 ```
 
 ###### db 생성 & 테스트
